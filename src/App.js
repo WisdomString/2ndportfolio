@@ -18,7 +18,7 @@ export default function App() {
     <Canvas 
     shadows dpr={[0.8, 2]}
     gl={{ alpha: true, antialias: true }} 
-    camera={{ fov: 50, position: [35, 5, 40], near: 10, far: 150 }}>
+    camera={{ fov: 30, position: [40, 10, 40], near: 10, far: 150 }}>
     
       <color attach="background" args={['white']} />
       
@@ -45,20 +45,9 @@ export default function App() {
       maxDistance={60}
        />
 
-<Text
-        scale={[10, 10, 10]}
-        color="black" // default
-        anchorX="center" // default
-        anchorY="center" // default
-        position-z={-30}
-        rotation-y={0.3}
-        maxWidth={0.5}
-        textAlign="center"
-      >
-      Psst..Hey...Read the Discription below
-      </Text>
+      
 
-<Text
+      <Text
         scale={[10, 10, 10]}
         color="black" // default
         anchorX="center" // default
@@ -78,10 +67,10 @@ export default function App() {
         position-z={50}// zed position
         rotation-y={3}
       >
-       Uhmm ... sorry about the mess. I may have spawned too much cubes. This is only an experimental
+       Uhmm ... sorry about the mess. I may have spawned too much particles. This is only an experimental
        website, My testing grounds for buggy codes...anyways..
       </Text>
-<Text
+      <Text
         scale={[10, 10, 10]}
         color="black" // default
         anchorX="center" // default
@@ -125,7 +114,7 @@ function Bubbles() {
      castShadow 
      receiveShadow 
      position={[0, 10, 0]}>
-      <boxBufferGeometry args={[1, 1, 1]} />
+      <planeBufferGeometry args={[1, 1, 1]} />
       <meshStandardMaterial roughness={0} color="#f0f0f0" />
       {particles.map((data, i) => (
         <Bubble key={i} {...data} />
